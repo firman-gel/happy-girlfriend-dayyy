@@ -11,8 +11,15 @@ function createHeart() {
 
 setInterval(createHeart, 300);
 
-window.addEventListener("click", () => {
+// 🔊 Autoplay musik di HP & Laptop
+function playMusic() {
   const music = document.getElementById("bgmusic");
-  music.muted = false;
-  music.play();
-}, { once: true });
+  if (music) {
+    music.muted = false;
+    music.play();
+  }
+}
+
+// Tangkap klik dan sentuhan
+window.addEventListener("click", playMusic, { once: true });
+window.addEventListener("touchstart", playMusic, { once: true });
