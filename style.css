@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+    background-image: url('assets/IMG_2435.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    background-color: rgba(255, 182, 193, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #ffccd5;
+    box-shadow: 0 0 20px #ffb6c1;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #ff69b4;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Heart animation */
+.heart {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    bottom: 0;
+    background-color: pink;
+    transform: rotate(45deg);
+    animation: floatUp linear forwards;
+    opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: -10px;
+    top: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+    }
+}
