@@ -11,7 +11,6 @@ function createHeart() {
 
 setInterval(createHeart, 300);
 
-// 🔊 Autoplay musik saat klik pertama
 window.addEventListener("click", () => {
   const music = document.getElementById("bgmusic");
   music.muted = false;
