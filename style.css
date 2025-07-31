@@ -1,83 +1,119 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier New', monospace;
-    background-image: url('IMG_2435.png');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
+.slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  animation: fade 32s infinite;
+}
+
+.slide:nth-child(2) { animation-delay: 8s; }
+.slide:nth-child(3) { animation-delay: 16s; }
+.slide:nth-child(4) { animation-delay: 24s; }
+
+@keyframes fade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  25% { opacity: 1; }
+  35% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.6);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
 }
 
 .container {
-    max-width: 600px;
-    background-color: rgba(255, 182, 193, 0.15);
-    padding: 30px;
-    border-radius: 15px;
-    border: 2px solid #ffccd5;
-    box-shadow: 0 0 20px #ffb6c1;
+  max-width: 700px;
+  background-color: rgba(255, 182, 193, 0.15);
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #ffccd5;
+  box-shadow: 0 0 20px #ffb6c1;
+}
+
+.pixel-girl {
+  width: 80px;
+  image-rendering: pixelated;
+  margin-bottom: 20px;
 }
 
 h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px #ff69b4;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #ff69b4;
 }
 
 p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 15px;
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
-/* Heart animation */
+/* Floating hearts */
 .heart {
-    width: 20px;
-    height: 20px;
-    position: fixed;
-    bottom: 0;
-    background-color: pink;
-    transform: rotate(45deg);
-    animation: floatUp linear forwards;
-    opacity: 0.7;
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  bottom: 0;
+  background-color: pink;
+  transform: rotate(45deg);
+  animation: floatUp linear forwards;
+  opacity: 0.7;
 }
 
 .heart::before,
 .heart::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    background-color: pink;
-    position: absolute;
-    border-radius: 50%;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  position: absolute;
+  border-radius: 50%;
 }
 
 .heart::before {
-    top: -10px;
-    left: 0;
+  top: -10px;
+  left: 0;
 }
 
 .heart::after {
-    left: -10px;
-    top: 0;
+  left: -10px;
+  top: 0;
 }
 
 @keyframes floatUp {
-    0% {
-        transform: translateY(0) rotate(45deg);
-        opacity: 0.7;
-    }
-    100% {
-        transform: translateY(-100vh) rotate(45deg);
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
 }
